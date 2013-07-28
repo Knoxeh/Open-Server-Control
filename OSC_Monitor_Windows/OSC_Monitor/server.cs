@@ -12,7 +12,7 @@ namespace OSC_Monitor
         private String srvLoc { get; set; }
         private String srvExe { get; set; }
         private String srvParams { get; set; }
-        private int srvPID;
+        private int srvPID { get; set; }
         public Process srvProcess { get; set; }
         public bool ProcessExists(int id) { return Process.GetProcesses().Any(x => x.Id == id); }
 
