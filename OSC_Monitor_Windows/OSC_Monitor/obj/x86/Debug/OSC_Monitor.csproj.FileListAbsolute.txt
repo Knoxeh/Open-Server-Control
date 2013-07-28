@@ -2,3 +2,7 @@ c:\users\nolan\documents\visual studio 2010\Projects\OSC_Monitor\OSC_Monitor\bin
 c:\users\nolan\documents\visual studio 2010\Projects\OSC_Monitor\OSC_Monitor\bin\Debug\OSC_Monitor.pdb
 c:\users\nolan\documents\visual studio 2010\Projects\OSC_Monitor\OSC_Monitor\obj\x86\Debug\OSC_Monitor.exe
 c:\users\nolan\documents\visual studio 2010\Projects\OSC_Monitor\OSC_Monitor\obj\x86\Debug\OSC_Monitor.pdb
+C:\Users\Nolan\Documents\GitHub\Open-Server-Control\OSC_Monitor_Windows\OSC_Monitor\obj\x86\Debug\OSC_Monitor.exe
+C:\Users\Nolan\Documents\GitHub\Open-Server-Control\OSC_Monitor_Windows\OSC_Monitor\obj\x86\Debug\OSC_Monitor.pdb
+C:\Users\Nolan\Documents\GitHub\Open-Server-Control\OSC_Monitor_Windows\OSC_Monitor\bin\Debug\OSC_Monitor.exe
+C:\Users\Nolan\Documents\GitHub\Open-Server-Control\OSC_Monitor_Windows\OSC_Monitor\bin\Debug\OSC_Monitor.pdb
