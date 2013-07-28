@@ -8,7 +8,7 @@ Current Contributors
 
 Project Scope
 -------------------
-The Open Server Control Panel Project is determined to create a web-based gameserver control panel that is OpenSource, Free, and Platform Independent using C#, C, PHP, and MySQL.
+The Open Server Control Panel Project is determined to create a web-based gameserver control panel that is OpenSource, Free, and Platform Independent using C#, C++, PHP, and MySQL.
 
 In the front-end panel upon completion will allow you to manage your gameservers on multiple hosts on ONE central site by allowing the users to:
 - start, stop and restart servers

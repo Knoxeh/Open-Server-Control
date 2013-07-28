@@ -1,4 +1,4 @@
-OSC Linux Monitor (C)
+OSC Linux Monitor (C++)
 =======================
 
 Current Contributors
