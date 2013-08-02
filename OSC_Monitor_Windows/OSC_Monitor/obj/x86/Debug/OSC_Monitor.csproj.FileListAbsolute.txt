@@ -6,3 +6,8 @@ C:\Users\Nolan\Documents\GitHub\Open-Server-Control\OSC_Monitor_Windows\OSC_Moni
 C:\Users\Nolan\Documents\GitHub\Open-Server-Control\OSC_Monitor_Windows\OSC_Monitor\obj\x86\Debug\OSC_Monitor.pdb
 C:\Users\Nolan\Documents\GitHub\Open-Server-Control\OSC_Monitor_Windows\OSC_Monitor\bin\Debug\OSC_Monitor.exe
 C:\Users\Nolan\Documents\GitHub\Open-Server-Control\OSC_Monitor_Windows\OSC_Monitor\bin\Debug\OSC_Monitor.pdb
+C:\Users\Nolan\Documents\GitHub\Open-Server-Control\OSC_Monitor_Windows\OSC_Monitor\bin\Debug\clrzmq.dll
+C:\Users\Nolan\Documents\GitHub\Open-Server-Control\OSC_Monitor_Windows\OSC_Monitor\bin\Debug\MySql.Data.dll
+C:\Users\Nolan\Documents\GitHub\Open-Server-Control\OSC_Monitor_Windows\OSC_Monitor\bin\Debug\clrzmq.pdb
+C:\Users\Nolan\Documents\GitHub\Open-Server-Control\OSC_Monitor_Windows\OSC_Monitor\bin\Debug\clrzmq.xml
+C:\Users\Nolan\Documents\GitHub\Open-Server-Control\OSC_Monitor_Windows\OSC_Monitor\obj\x86\Debug\OSC_Monitor.csprojResolveAssemblyReference.cache
