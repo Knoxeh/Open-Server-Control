@@ -34,7 +34,7 @@ namespace OSC_Monitor
             
             for(int x = 0; x < serverList.Count; x++)
             {
-                if(!ProcessExists(serverList[x].getPID()))
+                if(!ProcessExists(serverList[x].getPID()) && serverList[x].getPID() != -1)
                 {
                     Console.WriteLine("Server PID " + serverList[x].getPID() + " has crashed, restarting..");
                     serverList[x].start();
@@ -47,6 +47,10 @@ namespace OSC_Monitor
         {
             serverList.Add(newServer);
             
+        }
+        public server getServer(int id)
+        {
+            return serverList[id];
         }
         public void removeServer(int id)
         {
