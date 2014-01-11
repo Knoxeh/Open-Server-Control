@@ -23,7 +23,7 @@ namespace OSC_Monitor
 
 
             printLicense();
-            string sqlConnStr = @"server=localhost;userid=root;password=*****;database=ogp_panel";
+            string sqlConnStr = @"server=localhost;userid=root;password=********;database=ogp_panel";
 
             //Initiate serverManger, it handles crashed servers
             serverManager srvMgr = new serverManager();
