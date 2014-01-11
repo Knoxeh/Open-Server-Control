@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Diagnostics;
 using System.ComponentModel;
+using System.IO;
 
 namespace OSC_Monitor
 {
@@ -16,7 +17,7 @@ namespace OSC_Monitor
         private int srvPID { get; set; }
         public Process srvProcess { get; set; }
         public bool ProcessExists(int id) { return Process.GetProcesses().Any(x => x.Id == id); }
-
+        public StreamReader consoleReader;
         //Initiate the server class and set the variables
         public server(string location, string exe, string paramaters, bool start)
         {

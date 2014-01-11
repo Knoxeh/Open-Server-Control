@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Timers;
 using System.Diagnostics;
+using System.Threading;
 
 namespace OSC_Monitor
 {
@@ -18,11 +19,18 @@ namespace OSC_Monitor
         public serverManager()
         {
 
+            Thread t = new Thread(new ThreadStart(StartManager));
+            t.Start();
+
+            
+        }
+        private void StartManager()
+        {
             //Initialize Server ArrayList
             serverList = new List<server>();
-            
+
             //Create a timer
-            srvCheckTimer = new Timer(checkInterval);
+            srvCheckTimer = new System.Timers.Timer(checkInterval);
 
             //Ticky the tock tock
             srvCheckTimer.Elapsed += new ElapsedEventHandler(OnServerCheckEvent);

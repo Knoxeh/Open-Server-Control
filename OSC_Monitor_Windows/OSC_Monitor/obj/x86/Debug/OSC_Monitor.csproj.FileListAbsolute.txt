@@ -11,3 +11,11 @@ C:\Users\Nolan\Documents\GitHub\Open-Server-Control\OSC_Monitor_Windows\OSC_Moni
 C:\Users\Nolan\Documents\GitHub\Open-Server-Control\OSC_Monitor_Windows\OSC_Monitor\bin\Debug\clrzmq.pdb
 C:\Users\Nolan\Documents\GitHub\Open-Server-Control\OSC_Monitor_Windows\OSC_Monitor\bin\Debug\clrzmq.xml
 C:\Users\Nolan\Documents\GitHub\Open-Server-Control\OSC_Monitor_Windows\OSC_Monitor\obj\x86\Debug\OSC_Monitor.csprojResolveAssemblyReference.cache
+D:\KnoxehDesktop\Documents\GitHub\Open-Server-Control\OSC_Monitor_Windows\OSC_Monitor\obj\x86\Debug\OSC_Monitor.exe
+D:\KnoxehDesktop\Documents\GitHub\Open-Server-Control\OSC_Monitor_Windows\OSC_Monitor\obj\x86\Debug\OSC_Monitor.pdb
+D:\KnoxehDesktop\Documents\GitHub\Open-Server-Control\OSC_Monitor_Windows\OSC_Monitor\bin\Debug\OSC_Monitor.exe
+D:\KnoxehDesktop\Documents\GitHub\Open-Server-Control\OSC_Monitor_Windows\OSC_Monitor\bin\Debug\OSC_Monitor.pdb
+D:\KnoxehDesktop\Documents\GitHub\Open-Server-Control\OSC_Monitor_Windows\OSC_Monitor\bin\Debug\clrzmq.pdb
+D:\KnoxehDesktop\Documents\GitHub\Open-Server-Control\OSC_Monitor_Windows\OSC_Monitor\bin\Debug\clrzmq.xml
+D:\KnoxehDesktop\Documents\GitHub\Open-Server-Control\OSC_Monitor_Windows\OSC_Monitor\obj\x86\Debug\OSC_Monitor.csprojResolveAssemblyReference.cache
+D:\KnoxehDesktop\Documents\GitHub\Open-Server-Control\OSC_Monitor_Windows\OSC_Monitor\bin\Debug\MySql.Data.dll
