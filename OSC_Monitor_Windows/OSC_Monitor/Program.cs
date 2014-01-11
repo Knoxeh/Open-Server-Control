@@ -23,7 +23,7 @@ namespace OSC_Monitor
 
 
             printLicense();
-            string sqlConnStr = @"server=localhost;userid=root;password=********;database=ogp_panel";
+            string sqlConnStr = @"server=localhost;userid=root;password=******;database=ogp_panel";
 
             //Initiate serverManger, it handles crashed servers
             serverManager srvMgr = new serverManager();
@@ -73,10 +73,7 @@ namespace OSC_Monitor
         }
         public static void printLicense()
         {
-            Console.WriteLine("Open Server Control, Copyright (C) 2013");
-            Console.WriteLine("Open Server Control comes with ABSOLUTELY NO WARRANTY");
-            Console.WriteLine("This is free software, and you are welcome to redistribute it");
-            Console.WriteLine("under certain conditions; type `show c' for details.");
+            Console.Write("Copyright (C) 2014  Nolan 'Knoxeh' Murphy\n\nThis program is free software; you can redistribute it and/or modify it under\nthe terms of the GNU General Public License as published by the Free Software\nFoundation; either version 2 of the License, or (at your option) any later\nversion.\n\nThis program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.\n\nYou should have received a copy of the GNU General Public License along with\nthis program; if not, write to the Free Software Foundation, Inc., 51 Franklin\nStreet, Fifth Floor, Boston, MA  02110-1301, USA.\n");
             Console.WriteLine("--------------------------------------------------------------------------------");
         }
         public static void printConsole(String msg)
