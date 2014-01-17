@@ -57,17 +57,20 @@ namespace OSC_Monitor
                 try
                 {
                     //Read the data header - tells the buffer how much data is coming.
-                    Byte[] msgLength = new Byte[11];
+                    Byte[] msgLength = new Byte[9];
                     cStream.Read(msgLength, 0, msgLength.Length);
                     data = System.Text.Encoding.ASCII.GetString(msgLength,0,msgLength.Length);
-                   
-                    //Read the rest of the data depending on how much the header tells us there is.
-                    int msgLen = Int32.Parse(data);
-                    Byte[] msgInput = new Byte[msgLen];
-                    cStream.Read(msgInput, 0, msgInput.Length);
-                    data = System.Text.Encoding.ASCII.GetString(msgInput, 0, msgInput.Length);
+                    if(cStream.CanRead)
+                    {
+                        //Read the rest of the data depending on how much the header tells us there is.
+                        int msgLen = Int32.Parse(data);
+                        Byte[] msgInput = new Byte[msgLen];
+                        cStream.Read(msgInput, 0, msgInput.Length);
+                        data = System.Text.Encoding.ASCII.GetString(msgInput, 0, msgInput.Length);
+
+                        HandleClientInput(client, data);
+                    }
                     
-                    HandleClientInput(client, data);
 
                     
                 }
@@ -82,7 +85,7 @@ namespace OSC_Monitor
         {
             TcpClient client = (TcpClient)obj;
 
-            Console.Write("RECEIVED DATA: {0}", inData);
+            Console.WriteLine("RECEIVED DATA: {0}", inData);
 
 
         }
