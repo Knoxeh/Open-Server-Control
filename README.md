@@ -1,6 +1,8 @@
 Open Server Control Panel (OSCPanel)
 =======================
 
+**STATUS:** `Non-functioning`
+
 Current Contributors
 --------------------
 [Knoxeh](https://github.com/Knoxeh) (Windows Server Monitor & PHP Frontend)
