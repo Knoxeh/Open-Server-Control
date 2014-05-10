@@ -45,19 +45,20 @@ namespace OSC_Monitor
                 if(!ProcessExists(serverList[x].getPID()) && serverList[x].getPID() != -1)
                 {
                     Console.WriteLine("Server PID " + serverList[x].getPID() + " has crashed, restarting..");
+                    serverList[x].srvRunning = false;
                     serverList[x].start();
                 }
                 
             }
             
         }
-        public void startServer(int serverID)
+        public bool startServer(int serverID)
         {
-            serverList[serverID].start();
+            return serverList[serverID].start();
         }
-        public void stopServer(int serverID)
+        public bool stopServer(int serverID)
         {
-            serverList[serverID].stop();
+            return serverList[serverID].stop();
         }
         public void addServer(server newServer)
         {

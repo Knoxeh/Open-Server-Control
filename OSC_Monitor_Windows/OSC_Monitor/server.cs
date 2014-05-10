@@ -14,6 +14,7 @@ namespace OSC_Monitor
         private String srvLoc { get; set; }
         private String srvExe { get; set; }
         private String srvParams { get; set; }
+        public Boolean srvRunning { get; set; }
         private int srvPID { get; set; }
         public Process srvProcess { get; set; }
         public bool ProcessExists(int id) { return Process.GetProcesses().Any(x => x.Id == id); }
@@ -37,11 +38,20 @@ namespace OSC_Monitor
         }
         //Starts the server - returns a boolean if it is successfull or not.
         public bool start()
-        {
+        {   
+
             try
             {
-                srvProcess.Start();
-                srvPID = srvProcess.Id;
+                if(!srvRunning)
+                {
+                    srvProcess.Start();
+                    srvPID = srvProcess.Id;
+                }
+                else
+                {
+                    return false;
+                }
+                srvRunning = true;
             }
             catch (Win32Exception e)
             {
@@ -59,8 +69,17 @@ namespace OSC_Monitor
             {
                 if (ProcessExists(srvPID) || srvPID != -1)
                 {
-                    srvProcess.Kill();
-                    srvPID = -1;
+                    if(srvRunning)
+                    {
+                        srvProcess.Kill();
+                        srvPID = -1;
+                        srvRunning = false;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                  
                 }
                 else
                 {

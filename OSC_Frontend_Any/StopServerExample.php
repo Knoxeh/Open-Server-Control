@@ -19,6 +19,11 @@ if (!$fp) {
 	//Write the message length
     fwrite($fp,mb_convert_encoding(sprintf("%09d",strlen($commandJSON)),"ASCII"));
     fwrite($fp,$commandJSON,$stringLen); //write the message
+	
+	//Read response and output
+	$responseLen = intval(fread($fp,9));
+    echo fread($fp,$responseLen);
+	
     fclose($fp); // close the TCP socket
 }
 ?>

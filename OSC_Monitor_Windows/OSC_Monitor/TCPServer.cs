@@ -7,6 +7,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 
 namespace OSC_Monitor
@@ -16,7 +17,7 @@ namespace OSC_Monitor
         private TcpListener _server;
         private Boolean _isRunning = false;
         private int users = 0;
-
+        NetworkStream cStream;
         private List<IPAddress> whitelist = new List<IPAddress>(); 
         public TCPServer(int port)
         {
@@ -66,7 +67,7 @@ namespace OSC_Monitor
             IPAddress clientIP = IPAddress.Parse(((IPEndPoint)client.Client.RemoteEndPoint).Address.ToString());
 
             Boolean clientConnected = true;
-            NetworkStream cStream = client.GetStream();
+            cStream = client.GetStream();
 
             String data = null;
 
@@ -131,16 +132,33 @@ namespace OSC_Monitor
 
             Console.WriteLine("COMMAND RECEIVED: {0} {1}", command.Function, command.Args["id"]);
             
-            switch(command.Function)
+            JObject jsonReponse;
+            if(command.Function == "StartServer")
             {
-                case "StartServer":
-                    srvMgr.startServer(Int32.Parse(command.Args["id"].ToString()));
-                    break;
-                case "StopServer":
-                    srvMgr.stopServer(Int32.Parse(command.Args["id"].ToString()));
-                    break;
+                Boolean commandResponse = srvMgr.startServer(Int32.Parse(command.Args["id"].ToString()));
+                jsonReponse = JObject.FromObject(new 
+                {
+                    success = commandResponse
+                });
+                    
+                outputResponse linqResponse = new outputResponse(command.Function,command.Args,jsonReponse);
+                string response = JsonConvert.SerializeObject(linqResponse);
+
+                Byte[] data = System.Text.Encoding.ASCII.GetBytes(response);
+                Byte[] length = System.Text.Encoding.ASCII.GetBytes(response.Length.ToString("D9"));
+
+                cStream.Write(length, 0,length.Length);
+                cStream.Write(data,0,data.Length);
+            }
+            else if(command.Function == "StopServer")
+            {
+                srvMgr.stopServer(Int32.Parse(command.Args["id"].ToString()));
+            }
+            else if(command.Function == "GetServers")
+            {
 
             }
+
 
         }
     }
