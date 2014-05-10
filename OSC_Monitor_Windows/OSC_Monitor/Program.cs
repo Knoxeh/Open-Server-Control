@@ -17,15 +17,17 @@ namespace OSC_Monitor
         static MySqlConnection sqlConn = null;
         static MySqlDataReader sqlReader = null;
         private TcpListener _server;
+        public static serverManager srvMgr;
         static void Main(string[] args)
         {
 
 
             printLicense();
-            string sqlConnStr = @"server=localhost;userid=root;password=******;database=ogp_panel";
+            srvMgr = new serverManager();
+            /*string sqlConnStr = @"server=localhost;userid=root;password=******;database=ogp_panel";
 
             //Initiate serverManger, it handles crashed servers
-            serverManager srvMgr = new serverManager();
+            
             
             //Load servers from the database.
             try
@@ -66,7 +68,8 @@ namespace OSC_Monitor
             string hashConStr = "6367c48dd193d56ea7b0baad25b19455e529f5ee"; //Hardcoded hashstring - this will be configurable..
             
             string replyMessage = hashConStr + "| DEFAULT MESSAGE - CONTACT ADMINISTRATOR."; // default message - this should never be output
-
+            */
+            srvMgr.addServer(new server("C:\\Users\\Nolan\\Documents\\GitHub\\Open-Server-Control\\OSC_Monitor_Windows\\OSC_Monitor","cluckles.exe","-console",false));
             TCPServer tcs = new TCPServer(13000);
            
         }

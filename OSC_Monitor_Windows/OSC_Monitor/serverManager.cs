@@ -12,7 +12,7 @@ namespace OSC_Monitor
     {
         const int checkInterval = 10000;
         private static System.Timers.Timer srvCheckTimer;
-        private static List<server> serverList;
+        private static List<server> serverList = new List<server>();
 
         public static bool ProcessExists(int id) { return Process.GetProcesses().Any(x => x.Id == id); }
         
@@ -27,7 +27,7 @@ namespace OSC_Monitor
         private void StartManager()
         {
             //Initialize Server ArrayList
-            serverList = new List<server>();
+            
 
             //Create a timer
             srvCheckTimer = new System.Timers.Timer(checkInterval);
@@ -50,6 +50,14 @@ namespace OSC_Monitor
                 
             }
             
+        }
+        public void startServer(int serverID)
+        {
+            serverList[serverID].start();
+        }
+        public void stopServer(int serverID)
+        {
+            serverList[serverID].stop();
         }
         public void addServer(server newServer)
         {

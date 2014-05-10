@@ -11,7 +11,7 @@ using Newtonsoft.Json;
 
 namespace OSC_Monitor
 {
-    class TCPServer
+    class TCPServer : Program
     {
         private TcpListener _server;
         private Boolean _isRunning = false;
@@ -120,7 +120,7 @@ namespace OSC_Monitor
                   this.users -= 1;
             }
 
-        }
+        }   
         public void HandleClientInput(object obj, String inData)
         {
             TcpClient client = (TcpClient)obj;
@@ -129,8 +129,18 @@ namespace OSC_Monitor
          
             inputCommand command = JsonConvert.DeserializeObject<inputCommand>(inData);
 
+            Console.WriteLine("COMMAND RECEIVED: {0} {1}", command.Function, command.Args["id"]);
             
+            switch(command.Function)
+            {
+                case "StartServer":
+                    srvMgr.startServer(Int32.Parse(command.Args["id"].ToString()));
+                    break;
+                case "StopServer":
+                    srvMgr.stopServer(Int32.Parse(command.Args["id"].ToString()));
+                    break;
 
+            }
 
         }
     }
