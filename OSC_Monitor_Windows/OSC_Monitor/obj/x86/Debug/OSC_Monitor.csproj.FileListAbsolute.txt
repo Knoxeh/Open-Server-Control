@@ -16,3 +16,9 @@ D:\KnoxehDesktop\Documents\GitHub\Open-Server-Control\OSC_Monitor_Windows\OSC_Mo
 D:\KnoxehDesktop\Documents\GitHub\Open-Server-Control\OSC_Monitor_Windows\OSC_Monitor\obj\x86\Debug\OSC_Monitor.csprojResolveAssemblyReference.cache
 D:\KnoxehDesktop\Documents\GitHub\Open-Server-Control\OSC_Monitor_Windows\OSC_Monitor\bin\Debug\MySql.Data.dll
 C:\Users\Nolan\Documents\GitHub\Open-Server-Control\OSC_Monitor_Windows\OSC_Monitor\bin\Debug\OSC_Monitor.exe.config
+C:\Users\Nolan\Source\Repos\Open-Server-Control\OSC_Monitor_Windows\OSC_Monitor\bin\Debug\OSC_Monitor.exe.config
+C:\Users\Nolan\Source\Repos\Open-Server-Control\OSC_Monitor_Windows\OSC_Monitor\obj\x86\Debug\OSC_Monitor.exe
+C:\Users\Nolan\Source\Repos\Open-Server-Control\OSC_Monitor_Windows\OSC_Monitor\obj\x86\Debug\OSC_Monitor.pdb
+C:\Users\Nolan\Source\Repos\Open-Server-Control\OSC_Monitor_Windows\OSC_Monitor\bin\Debug\OSC_Monitor.exe
+C:\Users\Nolan\Source\Repos\Open-Server-Control\OSC_Monitor_Windows\OSC_Monitor\bin\Debug\OSC_Monitor.pdb
+C:\Users\Nolan\Source\Repos\Open-Server-Control\OSC_Monitor_Windows\OSC_Monitor\obj\x86\Debug\OSC_Monitor.csprojResolveAssemblyReference.cache

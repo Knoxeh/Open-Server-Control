@@ -69,7 +69,7 @@ namespace OSC_Monitor
             
             string replyMessage = hashConStr + "| DEFAULT MESSAGE - CONTACT ADMINISTRATOR."; // default message - this should never be output
             */
-            srvMgr.addServer(new server("C:\\Users\\Nolan\\Documents\\GitHub\\Open-Server-Control\\OSC_Monitor_Windows\\OSC_Monitor","cluckles.exe","-console",false));
+            srvMgr.addServer(new server("C:\\Users\\Nolan\\Documents\\visual studio 2013\\Projects\\TestConsoleOutput\\TestConsoleOutput\\bin\\Debug","TestConsoleOutput.exe","-console",false));
             TCPServer tcs = new TCPServer(13000);
            
         }

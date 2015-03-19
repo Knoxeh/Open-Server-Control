@@ -5,6 +5,7 @@ using System.Text;
 using System.Diagnostics;
 using System.ComponentModel;
 using System.IO;
+using System.Threading;
 
 namespace OSC_Monitor
 {
@@ -19,7 +20,9 @@ namespace OSC_Monitor
         public Process srvProcess { get; set; }
         public bool ProcessExists(int id) { return Process.GetProcesses().Any(x => x.Id == id); }
         public StreamReader consoleReader;
-
+        public StreamWriter consoleWriter;
+        public String consoleLine;
+        Thread consoleHandler;
         //Initiate the server class and set the variables
         public server(string location, string exe, string paramaters, bool start)
         {
@@ -28,13 +31,36 @@ namespace OSC_Monitor
             srvParams = paramaters;
             srvPID = -1;
 
+            //Setting up the new process 
             srvProcess = new Process();
             srvProcess.StartInfo.FileName = srvLoc + "/" + srvExe;
             srvProcess.StartInfo.Arguments = srvParams;
+            srvProcess.StartInfo.UseShellExecute = false;
+            //Allow the redirection of output and input for us to control the server
+            srvProcess.StartInfo.RedirectStandardOutput = true;
+            srvProcess.StartInfo.RedirectStandardInput = true;
 
+            consoleWriter = srvProcess.StandardInput;
+            
+            //Create a thread to handle the console output
+            consoleHandler = new Thread(() => HandleConsoleOutput());
             if (start)
-                this.start();
+                this.start(); 
 
+        }
+        //Handles console output
+        public void HandleConsoleOutput()
+        {
+            using (StreamReader reader = srvProcess.StandardOutput)
+            {
+                while(!reader.EndOfStream)
+                {
+                    consoleLine = reader.ReadLine();
+                  
+                }
+                
+
+            }
         }
         //Starts the server - returns a boolean if it is successfull or not.
         public bool start()
@@ -45,7 +71,10 @@ namespace OSC_Monitor
                 if(!srvRunning)
                 {
                     srvProcess.Start();
+                    consoleHandler.Start();
                     srvPID = srvProcess.Id;
+                    consoleHandler.Name = "Console Handle " + srvPID + "";
+                    this.consoleReader = srvProcess.StandardOutput;
                 }
                 else
                 {
@@ -67,11 +96,12 @@ namespace OSC_Monitor
         {
             try
             {
-                if (ProcessExists(srvPID) || srvPID != -1)
+                if (ProcessExists(srvPID) || srvPID != -1) //If the process hasn't been started or it doesnt even exist
                 {
                     if(srvRunning)
                     {
                         srvProcess.Kill();
+                        consoleHandler.Abort();
                         srvPID = -1;
                         srvRunning = false;
                     }
@@ -101,7 +131,7 @@ namespace OSC_Monitor
         {
             Boolean rStart = false, rStop = false;
 
-            if (ProcessExists(srvPID) || srvPID != -1)
+            if (ProcessExists(srvPID) || srvPID != -1) //If the process hasn't been started or it doesnt even exist
             {
                 rStop = this.stop();
                 if (rStop)

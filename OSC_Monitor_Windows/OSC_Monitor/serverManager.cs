@@ -5,6 +5,7 @@ using System.Text;
 using System.Timers;
 using System.Diagnostics;
 using System.Threading;
+using System.IO;
 
 namespace OSC_Monitor
 {
@@ -68,6 +69,11 @@ namespace OSC_Monitor
         public server getServer(int id)
         {
             return serverList[id];
+        }
+        public StreamReader getConsoleOutput(int id)
+        {
+            StreamReader consoleOutput = serverList[id].srvProcess.StandardOutput;
+            return consoleOutput;
         }
         public void removeServer(int id)
         {
